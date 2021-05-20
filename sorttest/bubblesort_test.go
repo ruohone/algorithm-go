@@ -2,23 +2,24 @@ package sorttest
 
 import "testing"
 
-func bubbleSort(data []int) {
-	for i := 0; i < len(data); i++ {
-		for j := i + 1; j < len(data); j++ {
-			if data[i] > data[j] {
-				data[j] ^= data[i]
-				data[i] ^= data[j]
-				data[j] ^= data[i]
+func bubbleSort(users []user) {
+	for i := len(users); i > 1; i-- {
+		for j := 1; j < i; j++ {
+			if users[j-1].Id > users[j].Id {
+				temp := users[j]
+				users[j] = users[j-1]
+				users[j-1] = temp
 			}
 		}
 	}
 }
 
 func TestBubbleSort(t *testing.T) {
-	arr := []int{1, 5, 4, 432, 67, 89, 4, 3}
-	bubbleSort(arr)
+	data := make([]user,len(testData))
+	copy(data,testData)
+	bubbleSort(data)
 
-	t.Log(arr)
+	t.Log(data)
 }
 
 /*
