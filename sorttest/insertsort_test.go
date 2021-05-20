@@ -4,16 +4,15 @@ import "testing"
 
 func insertSort(data []user)  {
 	for i:=1; i<len(data); i++{
-		temp := data[i]
-		replaceIndex := 0
-		for j:=i-1; j>=0; j -- {
-			if temp.Id >= data[j].Id {
-				replaceIndex = j+1
+		for j:=i; j>=1; j -- {
+			if data[j - 1].Id > data[j].Id {
+				temp := data[j - 1]
+				data[j - 1] = data[j]
+				data[j] = temp
+			} else {
 				break
 			}
-			data[j+1] = data[j]
 		}
-		data[replaceIndex] = temp
 	}
 }
 
