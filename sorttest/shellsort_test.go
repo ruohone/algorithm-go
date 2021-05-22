@@ -16,6 +16,8 @@ func shellSort(data []user)  {
 					temp := data[j - gap]
 					data[j - gap] = data[j]
 					data[j] = temp
+				} else {
+					break
 				}
 			}
 		}

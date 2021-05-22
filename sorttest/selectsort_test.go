@@ -3,12 +3,10 @@ package sorttest
 import "testing"
 
 func selectSort(data []user)  {
-	for i := 0; i < len(data); i++ {
-		for j := i + 1; j < len(data); j++ {
+	for i := 0; i < len(data) - 1; i++ {
+		for j:=i; j < len(data); j++ {
 			if data[i].Id > data[j].Id {
-				temp := data[j]
-				data[j] = data[i]
-				data[i] = temp
+				swap(data,i,j)
 			}
 		}
 	}
