@@ -11,3 +11,7 @@ var testData = []user{
 	{Id:87,Name:"Jason",Age:65},{Id:34,Name:"ZhangSan",Age:4},
 	{Id:43,Name:"Lily",Age:4},{Id:43,Name:"WangEr",Age:65},{Id:546,Name:"LiSi",Age:5},
 }
+
+func swap (data []user,i,j int)  {
+	data[i],data[j] = data[j], data[i]
+}
